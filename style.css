@@ -52,7 +52,11 @@ header a:visited {
 	float: right;
 	padding: 0.25em 1em;
 	margin: 0 0.25em;
-	
+}
+
+.right div {
+	display: inline-block;
+	margin: 0 0.25em;
 }
 
 .right img {
@@ -63,7 +67,7 @@ header a:visited {
 	float: left;
 }
 
-.dropnav {
+#dropnav, #dropsearch{
 	width: 100%;
 	height: 100%;
 	padding: 1em 0em;
@@ -73,7 +77,7 @@ header a:visited {
 	border-bottom: 1px solid #E0E0E0;
 }
 
-.dropnav ul {
+#dropnav ul {
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-end;
@@ -82,13 +86,17 @@ header a:visited {
 	margin: 0 1em;
 }
 
-.dropnav ul li {
+#dropnav ul li {
 	display: flex;
 	justify-content: flex-end;
 	padding: 1em;
 }
 
-.dropnav a {
+#menu {
+	display: none;
+}
+
+#dropnav a {
 	color: white;
 	padding: 0;
 	margin: 0 1em;
@@ -98,13 +106,13 @@ header a:visited {
 	display: flex;
 	justify-content: center;
 	padding: 0;
-	margin: 1.25em 0 0;
+	margin: 0.75em 0.5em 1.5em;
 	list-style-type: none;
 }
 
 .navigation li {
     margin: 0;
-    padding: 1.5em;
+    padding: 1.25em;
 	text-align: center;
 	background-color: white;
 	border-radius: 50px; 
@@ -112,7 +120,7 @@ header a:visited {
 }
 
 .navigation a {
-    margin: 2em;
+    margin: 1.5em;
 	margin-bottom: 0;
 	border-radius: 50px; 
 }
@@ -126,7 +134,27 @@ header a:visited {
 	display: flex;
 	justify-content: center;
 	padding: 0;
-	margin: 0.5em 0.5em 0;
+	margin: 0 0.5em 0;
+	margin-bottom: 0.5em;
+}
+
+#dropsearch {
+	width: 100%;
+	margin: 0;
+}
+
+#dropsearch .search {
+	padding: 0;
+	margin: 0;
+}
+
+#dropsearch .search .search-form {
+	margin: 0 1em;
+
+}
+
+#dropsearch .search .search-form input {
+	padding: 0.75em;
 }
 
 .search-form {
@@ -168,7 +196,7 @@ input:focus {
 	margin: 0;
 }
 
-.card {
+.card, .home-logo {
 	width: 90%;
 	display: flex;
 	flex-wrap: wrap;
@@ -179,6 +207,15 @@ input:focus {
 	background-color: white;
 	border: 1px solid #E0E0E0;
 	border-radius: 2px;
+}
+
+.home-logo {
+	background-color: transparent;
+	border: none;
+}
+
+.main {
+	margin: 1.1em;
 }
 
 .card p {
@@ -192,13 +229,17 @@ input:focus {
 }
 
 .card h3 a { 
-	color: #ed4444;
+	color: #d3344c;
 }
 
-.leftside-card, .content-search {
+.leftside-card, .content-search, .news-card {
 	width: 100%;
 	margin: 0.75em 1em 2em;
 	padding: 0;
+}
+
+.news-card {
+	margin: 0.75em 4.5em;
 }
 
 .content-search {
@@ -206,12 +247,12 @@ input:focus {
 	margin: 0.75em 0;
 }
 
-.leftside-card p, .content-search p {
+.leftside-card p, .content-search p, .news-card p {
 	padding: 1em 2em;
 	margin: 0;
 }
 
-.leftside-card h3, .content-search h3 {
+.leftside-card h3, .content-search h3, .news-card h3 {
 	margin: 0;
 	padding: 1em;
 	border-bottom: 1px solid #E0E0E0;
@@ -387,7 +428,7 @@ a:active {
 }
 
 .read-more:visited, .card p .read-more:link, .card p .read-more:visited {
-	color: #ed4444;
+	color: #d3344c;
 	text-decoration: none;
 }
 
@@ -408,18 +449,17 @@ a:active {
 	border: 1px solid #E0E0E0;
 }
 
-#paginate-container .current {
+#paginate-container .current, #paginate-container .dots {
 	margin: 0.5em 1em;
 	padding: 0.25em 0.5em;
 	border: 1px solid #E0E0E0;
 }
 
+#paginate-container .dots {
+	border: 0;
+}
+
 .featured {
-	/* display: flex; */
-	/* flex-direction: row; */
-	/* align-items: center; */
-	/* flex-wrap: wrap; */
-	/* justify-content: space-evenly; */
 	display: inline-block;
 	width: 100%;
 	height: auto;
@@ -429,56 +469,54 @@ a:active {
 }
 
 .featured p {
-	border-bottom: 1.5px solid #E0E0E0;
-	padding-bottom: 2em;
+	margin: 1.5em 2em;
 	
 }
 
-.featured p:last-child {
-	border-bottom: none;
-	padding-bottom: 0;
+hr {
+	border: 0.25px solid #454543;
 }
 
-/* dark theme  */
-.dark-cards {
-	color: white;
-	background-color: #313233;
+.featured h2 {
+ 	color: #d3344c;
 }
 
-.dark-cards a {
-	color: white;
+/*darkmode*/
+.darkCards {
+	color: white !important;
+	background-color: #313233 !important;
+	border: 1.5px solid #454543 !important;
 }
 
-.darkmode {
-	color: white;
-	background-color: #212121;
-}
-
-.navigation .darkmode {
-	background-color: #313233;
+.mainDark, .mainDark .navigation li:hover{
+	color: white !important;
+	background-color: #212121 !important;
 }
 
 .darkmodeborder {
-	border-bottom: 1px solid #E0E0E0;
+	/*border-bottom: 1px solid #E0E0E0;*/
+	border-bottom: 1px solid #454543 !important;
 }
 
-.navigation .darkmode:hover {
-	background-color: #212121;
+.headerdarkmode {
+	border-bottom: 1px solid #454543 !important;
 }
 
-.dark-search-form input {
-	color: white;
-	border-radius: 50px;
-	background-color: #313233;
-	border: 1px solid #E0E0E0;
-}
+/* MEDIA QUERYS */
 
-.dark-search-form input:focus {
-	background-color: white;
-	color: black;
-}
+@media (min-width: 1440px) and (max-height: 2560px) {
+	.search-form {
+		width: 75%;
+	}
 
-/* MEDIA QUERYS */ 
+	input {
+		padding: 2em;
+	}
+
+	.navigation li {
+		padding: 2.5em;
+	}
+} 
 
 @media (max-width: 1024px) {
 	
@@ -492,6 +530,18 @@ a:active {
 	
 	.content-search {
 		width: 80%;
+	}
+
+	.search-form {
+		width: 50%;
+	}
+
+	input {
+		padding: 0.75em;
+	}
+
+	.navigation li {
+    	padding: 1.5em;
 	}
 }
 
@@ -529,6 +579,18 @@ a:active {
 		margin-top: 0;
 	}
 	
+	.news-card {
+		margin: 0.75em 0;
+	}
+
+	#dropnav ul {
+		justify-content: center;
+		font-size: 0.95em;
+	}
+
+	#dropnav a {
+		margin: 0 0.25em;
+	}
 	
 	.rightside-card {
 		width: 100%;
@@ -562,7 +624,10 @@ a:active {
 	.featured img {
 		width: 65%;
 		height: auto;
-		
+	}
+
+	.featured p {
+		margin: 1em 1.5em;
 	}
 }
 
@@ -600,6 +665,10 @@ a:active {
 		width: 85%;
 		height: auto;
 	}
+
+	.navigation {
+		order: 99;
+	}
 }
 
 
@@ -633,4 +702,33 @@ blockquote.aligncenter, .wp-caption.aligncenter, img.aligncenter {
 	clear: both;
 	margin-top: 0.4em;
 	margin-bottom: 1.6em;
+}
+
+::-webkit-input-placeholder {
+   font-style: italic;
+}
+:-moz-placeholder {
+   font-style: italic;  
+}
+::-moz-placeholder {
+   font-style: italic;  
+}
+:-ms-input-placeholder {  
+   font-style: italic; 
+}
+
+.page-numbers {
+	color: #ed4444 !important;
+}
+.current, .dots {
+	border: none !important;
+	color: white !important;
+}
+
+.rightside-card a:last-child {
+    border-bottom: none !important;
+}
+
+#subcats p {
+	text-align: center;
 }

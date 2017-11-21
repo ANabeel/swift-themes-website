@@ -7,8 +7,7 @@
 						while( have_posts() ): the_post(); ?>	
 							<div class="card leftside-card">
 								<h3 class="title">
-								<a href="<?php the_permalink() ?>"rel="bookmark">
-								<?php the_title(); ?></h3></a>
+								<?php the_title(); ?></h3>
 								<?php the_content(); ?>
 							</div>
 				
